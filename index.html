@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Special App Offer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 35px;
+    width: 90%;
+    max-width: 380px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  h1 {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 14px;
+    opacity: 0.9;
+  }
+
+  .price {
+    margin: 20px 0;
+  }
+
+  .old-price {
+    text-decoration: line-through;
+    color: #00FFA3#00FFA3;
+    font-size: 23px;
+  }
+
+  .new-price {
+    font-size: 32px;
+    font-weight: bold;
+    color: #00ffcc;
+  }
+
+  button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+  }
+
+  .buy-btn {
+    background: linear-gradient(45deg, #00ffcc, #00c3ff);
+    color: #000;
+  }
+
+  .buy-btn:hover {
+    transform: scale(1.05);
+  }
+
+  .offer-box {
+    display: none;
+    margin-top: 20px;
+    animation: fadeIn 0.5s ease;
+  }
+
+  .badge {
+    background: #ff4757;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 12px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>Typography AI App</h1>
+  <p>Unlock all premium features instantly</p>
+
+  <button class="buy-btn" onclick="showOffer()">Buy App</button>
+
+  <div class="offer-box" id="offerBox">
+    <div class="badge">LIMITED TIME OFFER</div>
+
+    <div class="price">
+      <div class="old-price">1000</div>
+      <div class="new-price">499</div>
+    </div>
+
+    <button class="buy-btn" onclick="redirectToPayment()">Buy Now 499</button>
+  </div>
+</div>
+
+<script>
+  function showOffer() {
+    document.getElementById("offerBox").style.display = "block";
+  }
+
+  function redirectToPayment() {
+    window.location.href = "upi://pay?pa=sabita12345pandey172@oksbi&pn=Sabita&am=299.00&cu=INR&aid=uGICAgMD54tjFIg";
+  }
+</script>
+
+</body>
+</html>
